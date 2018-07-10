@@ -1,5 +1,27 @@
-CUED PhD thesis template
+CUED PhD template mod for University of Cantabria
 ========================
+
+I have adapted this template from the original repository to adhere to the University of Cantabria's requirements.
+
+The template is prepared to submit an English manuscript, including mandatory Spanish bits such as cover page or summary.
+
+Modifications:
+
+- Translated section names as found necessary.
+- Spanish extra summary section.
+- Modified draft mode for (I believe) a better management of notes and references.
+
+Pending:
+
+- Cover page modifications, including university's logo.
+
+Feel free to offer any suggestions and to report issues.
+
+Hope you find it useful.
+
+Alfonso
+
+--------------------------------------------------------------------------------
 
 [![Join the chat at https://gitter.im/kks32/phd-thesis-template](https://badges.gitter.im/kks32/phd-thesis-template.svg)](https://gitter.im/kks32/phd-thesis-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 > A LaTeX / XeLaTeX / LuaLaTeX PhD thesis template for Cambridge University Engineering Department.
@@ -10,6 +32,7 @@ CUED PhD thesis template
 
 ## Author(s)
 *   Krishna Kumar
+*   Alfonso de la Vega (adaptations of this fork)
 
 --------------------------------------------------------------------------------
 ## Features
