@@ -1,7 +1,18 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,numbered,print,index]{Classes/PhDThesisPSnPDF}
+% fonso: switch on and off the draft mode to get a friendlier and easier to check
+%   manuscript when writing. Just add or delete `draft' from the options below
+
+\documentclass[
+               a4paper,
+               12pt,
+               numbered,
+               print,
+               index,
+               nolineno,
+               draft
+              ]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -34,6 +45,9 @@
 % `chapter`: This option enables only the specified chapter and it's references
 %  Useful for review and corrections.
 %
+% fonso:
+%   `nolineno' specified to avoid line numbers. Just remove if you want them to
+%   appear in draft mode
 % ************************* Custom Page Margins ********************************
 %
 % `custommargin`: Use `custommargin' in options to activate custom page margins,
@@ -113,10 +127,12 @@
 
 \maketitle
 
+\todo{arreglame}
 \include{Dedication/dedication}
 \include{Declaration/declaration}
 \include{Acknowledgement/acknowledgement}
 \include{Abstract/abstract}
+\include{Abstract/resumen}
 
 % *********************** Adding TOC and List of Figures ***********************
 

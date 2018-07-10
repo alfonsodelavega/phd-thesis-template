@@ -622,8 +622,11 @@ supported!}
   \ifsetCustomMargin
   % Margin to be define in preamble using geometry package
   \else
-    \RequirePackage[paper=\PHD@papersize,hmarginratio=1:1,
-      vmarginratio=1:1,scale=0.75,bindingoffset=5mm]{geometry}
+    \ifsetDraft
+    \else
+      \RequirePackage[paper=\PHD@papersize,hmarginratio=1:1,
+        vmarginratio=1:1,scale=0.75,bindingoffset=5mm]{geometry}
+    \fi
   \fi
 
   \if@twoside
@@ -1014,7 +1017,7 @@ wish to left align your text}
 \newenvironment{acknowledgements}{
 \cleardoublepage
 \setsinglecolumn
-\chapter*{\centering \Large Acknowledgements}
+\chapter*{\centering \Large Agradecimientos}
 \thispagestyle{empty}
 }
 
@@ -1101,7 +1104,6 @@ wish to left align your text}
     \defineAbstractfalse
 \fi
 
-
 \newenvironment{abstract} {
 \ifPHD@abstract
 % Separate abstract as per Student Registry guidelines
@@ -1118,6 +1120,25 @@ wish to left align your text}
   \chapter*{\centering \Large Abstract}
   \thispagestyle{empty}
 \fi
+}
+
+% fonso: copied abstract environment to get a summary section
+\newenvironment{resumen} {
+  \ifPHD@abstract
+  % Separate abstract as per Student Registry guidelines
+  \thispagestyle{empty}
+  \setsinglecolumn
+  \begin{center}
+    { \Large {\bfseries {\@title}} \par}
+    {{\large \vspace*{1em} \@author} \par}
+  \end{center}
+  \else
+  % Normal abstract in the thesis
+  \cleardoublepage
+  \setsinglecolumn
+  \chapter*{\centering \Large Resumen}
+  \thispagestyle{empty}
+  \fi
 }
 
 

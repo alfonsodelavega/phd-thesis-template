@@ -13,8 +13,11 @@
 %\setlength{\parskip}{0.5em}
 % Ragged bottom avoids extra whitespaces between paragraphs
 \raggedbottom
+
+% Better enumeration
+\usepackage{enumitem}
+
 % To remove the excess top spacing for enumeration, list and description
-%\usepackage{enumitem}
 %\setlist[enumerate,itemize,description]{topsep=0em}
 
 % *****************************************************************************
@@ -170,26 +173,41 @@
 %\SetDraftWMPosition{bottom}
 
 % Draft Version - default is v1.0
-%\SetDraftVersion{v1.1}
+% fonso: empty as I find it useless in my case
+\SetDraftVersion{}
 
 % Draft Text grayscale value (should be between 0-black and 1-white)
 % Default value is 0.75
 %\SetDraftGrayScale{0.8}
 
+% Double spacing for draft mode
+\ifsetDraft
+  \doublespacing
+\fi
+
+% Border colors on everything for easy check
+\ifsetDraft
+  \hypersetup{colorlinks=false}
+\fi
+
+% Greater margins to see notes
+\ifsetDraft
+  \RequirePackage[left=40mm,right=35mm,top=35mm,bottom=30mm]{geometry}
+  \setFancyHdr % To apply fancy header after geometry package is loaded
+\fi
 
 % ******************************** Todo Notes **********************************
-%% Uncomment the following lines to have todonotes.
+\usepackage[obeyFinal]{todonotes}
 
-%\ifsetDraft
-%	\usepackage[colorinlistoftodos]{todonotes}
-%	\newcommand{\mynote}[1]{\todo[author=kks32,size=\small,inline,color=green!40]{#1}}
-%\else
-%	\newcommand{\mynote}[1]{}
-%	\newcommand{\listoftodos}{}
-%\fi
+% fonso: Change previous line with this if you want notes everywhere
+%\usepackage{todonotes}
 
-% Example todo: \mynote{Hey! I have a note}
+% Example todo: \todo{Hey! I have a note}
 
-% *****************************************************************************
-% ******************* Better enumeration my MB*************
-\usepackage{enumitem}
+% ******************************** BugFixes ************************************
+
+% Fix line numbers failure (if enabled) when switching off draft mode
+\makeatletter
+\providecommand{\@LN}[2]{}
+\makeatother
+
